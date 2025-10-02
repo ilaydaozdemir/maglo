@@ -32,7 +32,9 @@ const SignIn = () => {
   );
 
   const handleCreateAccount = async () => {
-    if (!validateForm()) {
+    const isValid = validateForm();
+    
+    if (!isValid) {
       return;
     }
 

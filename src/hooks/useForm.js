@@ -26,9 +26,9 @@ export const useForm = (initialValues = {}, validationRules = {}) => {
   const validateForm = () => {
     const newErrors = {};
 
-    // Ad soyad doğrulama
-    if (validationRules.fullName !== false && formData.fullName) {
-      if (!formData.fullName.trim()) {
+    // Ad soyad doğrulama - zorunlu alan kontrolü
+    if (validationRules.fullName !== false) {
+      if (!formData.fullName || !formData.fullName.trim()) {
         newErrors.fullName = "Ad soyad gereklidir";
       } else {
         const nameValidation = validateFullName(formData.fullName);
@@ -38,18 +38,18 @@ export const useForm = (initialValues = {}, validationRules = {}) => {
       }
     }
 
-    // E-posta doğrulama
-    if (validationRules.email !== false && formData.email) {
-      if (!formData.email.trim()) {
+    // E-posta doğrulama - zorunlu alan kontrolü
+    if (validationRules.email !== false) {
+      if (!formData.email || !formData.email.trim()) {
         newErrors.email = "E-posta gereklidir";
       } else if (!validateEmail(formData.email)) {
         newErrors.email = "Geçerli bir e-posta adresi giriniz";
       }
     }
 
-    // Şifre doğrulama
-    if (validationRules.password !== false && formData.password) {
-      if (!formData.password.trim()) {
+    // Şifre doğrulama - zorunlu alan kontrolü
+    if (validationRules.password !== false) {
+      if (!formData.password || !formData.password.trim()) {
         newErrors.password = "Şifre gereklidir";
       } else {
         const passwordValidation = validatePassword(formData.password);
