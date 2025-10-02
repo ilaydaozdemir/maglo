@@ -1,16 +1,57 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './SignIn.module.css';
 import Logo from '../../assets/Logo.png';
 import SignInImage from '../../assets/SignIn.png';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import Spinner from '../../components/Spinner/Spinner';
+import { validateEmail, validatePassword, validateFullName } from '../../utils';
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     password: ''
   });
+  
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const validateFormData = () => {
+    const newErrors = {};
+    
+    // Ad soyad doğrulama
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Ad soyad gereklidir';
+    } else {
+      const nameValidation = validateFullName(formData.fullName);
+      if (!nameValidation.isValid) {
+        newErrors.fullName = nameValidation.message;
+      }
+    }
+    
+    // E-posta doğrulama
+    if (!formData.email.trim()) {
+      newErrors.email = 'E-posta gereklidir';
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Geçerli bir e-posta adresi giriniz';
+    }
+    
+    // Şifre doğrulama
+    if (!formData.password.trim()) {
+      newErrors.password = 'Şifre gereklidir';
+    } else {
+      const passwordValidation = validatePassword(formData.password);
+      if (!passwordValidation.isValid) {
+        newErrors.password = passwordValidation.message;
+      }
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -18,11 +59,42 @@ const SignIn = () => {
       ...prev,
       [name]: value
     }));
+    
+    // Hata mesajını temizle
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
-  const handleCreateAccount = () => {
-    console.log('Create Account clicked', formData);
-    // Burada form submit işlemi yapılacak
+  const handleCreateAccount = async () => {
+    if (!validateFormData()) {
+      return;
+    }
+
+    setIsLoading(true);
+    
+    try {
+      // Auth simülasyonu - 2 saniye bekle
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Başarılı giriş simülasyonu
+      localStorage.setItem('authToken', 'simulated-token');
+      localStorage.setItem('userData', JSON.stringify({
+        fullName: formData.fullName,
+        email: formData.email
+      }));
+      
+      // Dashboard'a yönlendir
+      navigate('/dashboard');
+    } catch (error) {
+      console.error('Giriş hatası:', error);
+      setErrors({ general: 'Bir hata oluştu. Lütfen tekrar deneyin.' });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleGoogleSignUp = () => {
@@ -57,6 +129,7 @@ const SignIn = () => {
               label="Full Name"
               value={formData.fullName}
               onChange={handleInputChange}
+              error={errors.fullName}
             />
             <Input 
               type="email" 
@@ -65,6 +138,7 @@ const SignIn = () => {
               label="Email"
               value={formData.email}
               onChange={handleInputChange}
+              error={errors.email}
             />
             <Input 
               type="password" 
@@ -73,15 +147,29 @@ const SignIn = () => {
               label="Password"
               value={formData.password}
               onChange={handleInputChange}
+              error={errors.password}
             />
+            {errors.general && (
+              <div className={styles.errorMessage}>
+                {errors.general}
+              </div>
+            )}
           </div>
           
           <div className={styles.buttonContainer}>
             <Button 
               variant="primary" 
               onClick={handleCreateAccount}
+              disabled={isLoading}
             >
-              Create Account
+              {isLoading ? (
+                <>
+                  <Spinner size="small" color="secondary" />
+                  <span style={{ marginLeft: '8px' }}>Hesap Oluşturuluyor...</span>
+                </>
+              ) : (
+                'Create Account'
+              )}
             </Button>
             
             <Button 

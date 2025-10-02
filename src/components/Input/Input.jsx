@@ -8,6 +8,7 @@ const Input = ({
   onChange = () => {},
   name = '',
   label = '',
+  error = '',
   ...props 
 }) => {
   return (
@@ -19,9 +20,10 @@ const Input = ({
         value={value}
         onChange={onChange}
         name={name}
-        className={styles.input}
+        className={`${styles.input} ${error ? styles.error : ''}`}
         {...props}
       />
+      {error && <span className={styles.errorText}>{error}</span>}
     </div>
   );
 };
