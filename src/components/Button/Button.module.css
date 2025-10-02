@@ -1,0 +1,75 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  width: 404px;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Primary Button - Create Account */
+.primary {
+  height: 48px;
+  padding: 14px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+.primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.primary:active {
+  background-color: var(--color-primary-active);
+}
+
+/* Secondary Button - Google Sign Up */
+.secondary {
+  height: 50px;
+  padding: 13px;
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-secondary);
+}
+
+.secondary:hover {
+  background-color: var(--color-background-secondary);
+  opacity: 0.5;
+  border-color: var(--color-border-hover);
+}
+
+.secondary:active {
+  background-color: var(--color-background-secondary);
+  opacity: 0.8;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .button {
+    width: 100%;
+    max-width: 404px;
+  }
+}
