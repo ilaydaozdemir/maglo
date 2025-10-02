@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.leftSide {
+  flex: 1;
+  padding: 0 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.logoContainer {
+  margin-top: 40px;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-width: 200px;
+}
+
+.content {
+  margin-top: 105px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.signInLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.signInText {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-text-primary);
+  text-align: center;
+  width: 404px;
+}
+
+.signInQuestion {
+  color: var(--color-text-secondary);
+}
+
+.signInSpan {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-text-primary);
+  position: relative;
+  cursor: pointer;
+}
+
+.signInSpan::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+.title {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 100%;
+  color: var(--color-text-primary);
+  margin: 0;
+  text-align: left;
+}
+
+.subtitle {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: left;
+}
+
+.rightSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background-light);
+  overflow: hidden;
+}
+
+.signInImage {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .leftSide {
+    padding: 0 20px;
+  }
+  
+  .content {
+    margin-top: 40px;
+  }
+  
+  .rightSide {
+    order: -1;
+    min-height: 300px;
+  }
+}
