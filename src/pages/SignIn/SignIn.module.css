@@ -59,7 +59,7 @@
 }
 
 .signInText {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -74,29 +74,30 @@
 }
 
 .signInSpan {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 14px;
   line-height: 100%;
-  color: var(--color-text-primary);
+  color: #000;
   position: relative;
   cursor: pointer;
 }
 
 .signInSpan::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: -2px;
   left: 0;
+  bottom: -6px;
   width: 100%;
-  height: 3px;
-  background-color: var(--color-accent);
-  border-radius: 2px;
+  height: 6px;
+  background: none;
+  border-bottom: 3px solid #b5e33d;
+  border-radius: 50%;
 }
 
 .title {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 30px;
@@ -107,7 +108,7 @@
 }
 
 .subtitle {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -138,15 +139,15 @@
   .container {
     flex-direction: column;
   }
-  
+
   .leftSide {
     padding: 0 20px;
   }
-  
+
   .content {
     margin-top: 40px;
   }
-  
+
   .rightSide {
     order: -1;
     min-height: 300px;
