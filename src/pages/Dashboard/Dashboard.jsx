@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./Dashboard.module.css";
+import { useAuth } from "../../hooks";
 
 const Dashboard = () => {
+  const { user, logout } = useAuth();
+
   const handleLogout = () => {
-    // Auth token'ı temizle ve SignIn sayfasına yönlendir
-    localStorage.removeItem("authToken");
-    window.location.href = "/";
+    logout();
   };
 
   return (
@@ -19,8 +20,9 @@ const Dashboard = () => {
 
       <div className={styles.content}>
         <div className={styles.welcomeCard}>
-          <h2>Hoş Geldiniz!</h2>
+          <h2>Hoş Geldiniz, {user?.fullName || 'Kullanıcı'}!</h2>
           <p>Başarıyla giriş yaptınız. Dashboard sayfasına yönlendirildiniz.</p>
+          <p><strong>E-posta:</strong> {user?.email}</p>
         </div>
       </div>
     </div>
