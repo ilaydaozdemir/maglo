@@ -1,9 +1,12 @@
 import "./App.css";
-import SignIn from "./pages/SignIn/SignIn";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
-  return <div className="App"><SignIn
-  ></SignIn></div>;
+  return (
+    <div className="App">
+      <AppRouter />
+    </div>
+  );
 }
 
 export default App;
