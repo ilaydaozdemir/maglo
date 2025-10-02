@@ -1,0 +1,25 @@
+:root {
+  /* Primary Colors */
+  --color-primary: rgba(200, 238, 68, 1);
+  --color-primary-hover: rgba(180, 218, 58, 1);
+  --color-primary-active: rgba(160, 198, 48, 1);
+  
+  /* Text Colors */
+  --color-text-primary: rgba(27, 33, 45, 1);
+  --color-text-secondary: rgba(120, 119, 139, 1);
+  --color-text-placeholder: rgba(120, 119, 139, 1);
+  
+  /* Background Colors */
+  --color-background-primary: rgba(242, 242, 242, 1);
+  --color-background-secondary: rgba(245, 245, 245, 1);
+  --color-background-light: #f8f9fa;
+  
+  /* Border Colors */
+  --color-border-primary: rgba(242, 242, 242, 1);
+  --color-border-secondary: rgba(245, 245, 245, 1);
+  --color-border-hover: rgba(200, 200, 200, 1);
+  
+  /* Accent Colors */
+  --color-accent: rgba(200, 238, 68, 1);
+  --color-accent-hover: rgba(180, 218, 58, 1);
+}
