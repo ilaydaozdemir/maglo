@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Sidebar.module.css';
 import Logo from '../../assets/Logo.png';
 import DashboardIcon from '../../assets/dashboardIcon.png';
@@ -10,59 +10,27 @@ import HelpIcon from '../../assets/helpIcon.png';
 import LogoutIcon from '../../assets/Logout.png';
 
 const Sidebar = ({ isOpen, onToggle, onLogout }) => {
-  const [activeItem, setActiveItem] = useState('Dashboard');
-
   const menuItems = [
-    {
-      id: 'Dashboard',
-      label: 'Dashboard',
-      icon: DashboardIcon
-    },
-    {
-      id: 'Transactions',
-      label: 'Transactions',
-      icon: TransactionsIcon
-    },
-    {
-      id: 'Invoices',
-      label: 'Invoices',
-      icon: InvoicesIcon
-    },
-    {
-      id: 'My Wallets',
-      label: 'My Wallets',
-      icon: WalletIcon
-    },
-    {
-      id: 'Settings',
-      label: 'Settings',
-      icon: SettingsIcon
-    }
+    { id: 1, label: 'Dashboard', icon: DashboardIcon },
+    { id: 2, label: 'Transactions', icon: TransactionsIcon },
+    { id: 3, label: 'Invoices', icon: InvoicesIcon },
+    { id: 4, label: 'My Wallets', icon: WalletIcon },
+    { id: 5, label: 'Settings', icon: SettingsIcon }
   ];
 
   const bottomMenuItems = [
-    {
-      id: 'Help',
-      label: 'Help',
-      icon: HelpIcon
-    },
-    {
-      id: 'Logout',
-      label: 'Logout',
-      icon: LogoutIcon
-    }
+    { id: 6, label: 'Help', icon: HelpIcon },
+    { id: 7, label: 'Logout', icon: LogoutIcon, onClick: onLogout }
   ];
 
-  const handleItemClick = (itemId) => {
-    setActiveItem(itemId);
-    // Burada routing logic'i eklenebilir
+  const handleItemClick = (item) => {
+    // Handle menu item click
   };
 
-  const handleBottomItemClick = (itemId) => {
-    if (itemId === 'Logout' && onLogout) {
-      onLogout();
+  const handleBottomItemClick = (item) => {
+    if (item.onClick) {
+      item.onClick();
     }
-    // Help için gelecekte routing logic'i eklenebilir
   };
 
   return (
@@ -75,14 +43,10 @@ const Sidebar = ({ isOpen, onToggle, onLogout }) => {
         {menuItems.map((item) => (
           <div
             key={item.id}
-            className={`${styles.navItem} ${activeItem === item.id ? styles.active : ''}`}
-            onClick={() => handleItemClick(item.id)}
+            className={styles.navItem}
+            onClick={() => handleItemClick(item)}
           >
-            <img 
-              src={item.icon} 
-              alt={item.label} 
-              className={styles.navIcon}
-            />
+            <img src={item.icon} alt={item.label} className={styles.navIcon} />
             <span className={styles.navLabel}>{item.label}</span>
           </div>
         ))}
@@ -93,13 +57,9 @@ const Sidebar = ({ isOpen, onToggle, onLogout }) => {
           <div
             key={item.id}
             className={styles.navItem}
-            onClick={() => handleBottomItemClick(item.id)}
+            onClick={() => handleBottomItemClick(item)}
           >
-            <img 
-              src={item.icon} 
-              alt={item.label} 
-              className={styles.navIcon}
-            />
+            <img src={item.icon} alt={item.label} className={styles.navIcon} />
             <span className={styles.navLabel}>{item.label}</span>
           </div>
         ))}

@@ -1,0 +1,140 @@
+.transactionList {
+  background: var(--color-bg-primary);
+  border-radius: 15px;
+  padding: 20px;
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.viewAll {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewAll:hover {
+  opacity: 0.7;
+}
+
+.viewAllText {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-transaction-link);
+}
+
+.arrow {
+  font-size: 14px;
+  color: var(--color-transaction-link);
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 12px 0;
+}
+
+.headerCell {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+}
+
+.nameBusiness {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transactionIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.nameBusinessInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.business {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.type {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.amount {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.date {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}

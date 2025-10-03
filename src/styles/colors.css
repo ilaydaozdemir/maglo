@@ -1,25 +1,76 @@
 :root {
-  /* Primary Colors */
+  /* Base Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
   --color-primary: rgba(200, 238, 68, 1);
   --color-primary-hover: rgba(180, 218, 58, 1);
   --color-primary-active: rgba(160, 198, 48, 1);
+  --color-primary-light: rgba(200, 238, 68, 0.1);
   
   /* Text Colors */
   --color-text-primary: rgba(27, 33, 45, 1);
   --color-text-secondary: rgba(120, 119, 139, 1);
   --color-text-placeholder: rgba(120, 119, 139, 1);
+  --color-text-muted: #333333;
+  --color-text-light: #666666;
   
   /* Background Colors */
-  --color-background-primary: rgba(242, 242, 242, 1);
-  --color-background-secondary: rgba(245, 245, 245, 1);
-  --color-background-light: #f8f9fa;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: rgba(250, 250, 250, 1);
+  --color-bg-tertiary: rgba(242, 242, 242, 1);
+  --color-bg-quaternary: rgba(245, 245, 245, 1);
+  --color-bg-light: #f8f9fa;
+  --color-bg-semi-transparent: rgba(255, 255, 255, 0.95);
   
   /* Border Colors */
   --color-border-primary: rgba(242, 242, 242, 1);
   --color-border-secondary: rgba(245, 245, 245, 1);
   --color-border-hover: rgba(200, 200, 200, 1);
   
-  /* Accent Colors */
-  --color-accent: rgba(200, 238, 68, 1);
-  --color-accent-hover: rgba(180, 218, 58, 1);
+  /* Icon Colors */
+  --color-icon-primary: rgba(146, 158, 174, 1);
+  --color-icon-hover: rgba(27, 33, 45, 1);
+  
+  /* Shadow Colors */
+  --color-shadow-light: rgba(0, 0, 0, 0.1);
+  --color-shadow-medium: rgba(0, 0, 0, 0.15);
+  
+  /* Sidebar Colors */
+  --color-sidebar-bg: var(--color-bg-secondary);
+  --color-sidebar-text: var(--color-icon-primary);
+  --color-sidebar-hover-bg: var(--color-primary);
+  --color-sidebar-hover-text: var(--color-text-primary);
+  
+  /* Dashboard Colors */
+  --color-dashboard-bg: var(--color-bg-primary);
+  --color-dashboard-header-bg: var(--color-bg-secondary);
+  --color-dashboard-title: var(--color-text-primary);
+  --color-dashboard-icon: var(--color-icon-primary);
+  --color-dashboard-icon-hover: var(--color-icon-hover);
+  
+  /* User Profile Colors */
+  --color-user-bg: var(--color-bg-secondary);
+  --color-user-avatar-bg: var(--color-primary);
+  --color-user-avatar-text: var(--color-text-primary);
+  --color-user-name: var(--color-text-primary);
+  --color-user-arrow: var(--color-icon-primary);
+  
+  /* Dropdown Colors */
+  --color-dropdown-bg: var(--color-bg-primary);
+  --color-dropdown-border: var(--color-border-primary);
+  --color-dropdown-shadow: var(--color-shadow-light);
+  --color-dropdown-item-hover: var(--color-primary-light);
+  
+  /* Welcome Card Colors */
+  --color-welcome-bg: var(--color-bg-semi-transparent);
+  --color-welcome-shadow: var(--color-shadow-light);
+  --color-welcome-title: var(--color-text-muted);
+  --color-welcome-text: var(--color-text-light);
+  
+  /* Chart Colors */
+  --color-chart-income: rgba(41, 160, 115, 1);
+  --color-chart-expenses: rgba(200, 238, 68, 1);
+  
+  /* Transaction Colors */
+  --color-transaction-link: rgba(41, 160, 115, 1);
 }
