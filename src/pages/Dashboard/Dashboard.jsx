@@ -34,15 +34,15 @@ const Dashboard = () => {
     setActiveCard(cardId);
   };
 
-  // Chart data with two series
+  // Chart data with two series - larger values
   const chartData = [
-    { name: "Apr 17", income: 1200, expense: 800 },
-    { name: "Apr 18", income: 1500, expense: 900 },
-    { name: "Apr 19", income: 1800, expense: 1200 },
-    { name: "Apr 20", income: 1600, expense: 1100 },
-    { name: "Apr 21", income: 2000, expense: 1400 },
-    { name: "Apr 22", income: 2200, expense: 1600 },
-    { name: "Apr 23", income: 1900, expense: 1300 },
+    { name: "Apr 17", income: 12000, expense: 8000 },
+    { name: "Apr 18", income: 15000, expense: 9000 },
+    { name: "Apr 19", income: 18000, expense: 12000 },
+    { name: "Apr 20", income: 16000, expense: 11000 },
+    { name: "Apr 21", income: 20000, expense: 14000 },
+    { name: "Apr 22", income: 22000, expense: 16000 },
+    { name: "Apr 23", income: 19000, expense: 13000 },
   ];
 
   return (

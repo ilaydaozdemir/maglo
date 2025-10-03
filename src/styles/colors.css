@@ -71,6 +71,7 @@
   --color-chart-income: rgba(41, 160, 115, 1);
   --color-chart-expenses: rgba(200, 238, 68, 1);
   --color-chart-axis-text: rgba(146, 158, 174, 1);
+  --color-chart-tooltip-bg: rgba(243, 246, 248, 1);
   
   /* Transaction Colors */
   --color-transaction-link: rgba(41, 160, 115, 1);

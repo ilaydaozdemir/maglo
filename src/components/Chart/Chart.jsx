@@ -49,11 +49,27 @@ const Chart = ({
                 fontSize: 12, 
                 fontWeight: 400 
               }} 
-              domain={[0, 10000]}
-              ticks={[0, 3000, 5000, 7000, 10000]}
+              domain={[0, 25000]}
+              ticks={[0, 5000, 10000, 15000, 20000, 25000]}
               tickFormatter={(value) => `${value/1000}K`}
             />
-            <Tooltip />
+            <Tooltip 
+              contentStyle={{
+                backgroundColor: 'var(--color-chart-tooltip-bg)',
+                border: 'none',
+                borderRadius: '8px',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                padding: '8px 12px'
+              }}
+              formatter={(value, name) => {
+                console.log('Tooltip formatter:', { value, name });
+                if (name === 'expense') {
+                  return [`$${value.toLocaleString()}`, 'Expenses'];
+                }
+                return null;
+              }}
+              labelFormatter={() => ''}
+            />
             {showLegend && <Legend />}
             {dataKeys.map((key, index) => (
               <Line 
@@ -87,11 +103,27 @@ const Chart = ({
                 fontSize: 12, 
                 fontWeight: 400 
               }} 
-              domain={[0, 10000]}
-              ticks={[0, 3000, 5000, 7000, 10000]}
+              domain={[0, 25000]}
+              ticks={[0, 5000, 10000, 15000, 20000, 25000]}
               tickFormatter={(value) => `${value/1000}K`}
             />
-            <Tooltip />
+            <Tooltip 
+              contentStyle={{
+                backgroundColor: 'var(--color-chart-tooltip-bg)',
+                border: 'none',
+                borderRadius: '8px',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                padding: '8px 12px'
+              }}
+              formatter={(value, name) => {
+                console.log('Tooltip formatter:', { value, name });
+                if (name === 'expense') {
+                  return [`$${value.toLocaleString()}`, 'Expenses'];
+                }
+                return null;
+              }}
+              labelFormatter={() => ''}
+            />
             {showLegend && <Legend />}
             {dataKeys.map((key, index) => (
               <Bar 
@@ -121,7 +153,23 @@ const Chart = ({
                 <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
               ))}
             </Pie>
-            <Tooltip />
+            <Tooltip 
+              contentStyle={{
+                backgroundColor: 'var(--color-chart-tooltip-bg)',
+                border: 'none',
+                borderRadius: '8px',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                padding: '8px 12px'
+              }}
+              formatter={(value, name) => {
+                console.log('Tooltip formatter:', { value, name });
+                if (name === 'expense') {
+                  return [`$${value.toLocaleString()}`, 'Expenses'];
+                }
+                return null;
+              }}
+              labelFormatter={() => ''}
+            />
             {showLegend && <Legend />}
           </PieChart>
         );
@@ -145,11 +193,27 @@ const Chart = ({
                 fontSize: 12, 
                 fontWeight: 400 
               }} 
-              domain={[0, 10000]}
-              ticks={[0, 3000, 5000, 7000, 10000]}
+              domain={[0, 25000]}
+              ticks={[0, 5000, 10000, 15000, 20000, 25000]}
               tickFormatter={(value) => `${value/1000}K`}
             />
-            <Tooltip />
+            <Tooltip 
+              contentStyle={{
+                backgroundColor: 'var(--color-chart-tooltip-bg)',
+                border: 'none',
+                borderRadius: '8px',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                padding: '8px 12px'
+              }}
+              formatter={(value, name) => {
+                console.log('Tooltip formatter:', { value, name });
+                if (name === 'expense') {
+                  return [`$${value.toLocaleString()}`, 'Expenses'];
+                }
+                return null;
+              }}
+              labelFormatter={() => ''}
+            />
             {showLegend && <Legend />}
             <Line type="monotone" dataKey="value" stroke={colors[0]} strokeWidth={2} />
           </LineChart>
