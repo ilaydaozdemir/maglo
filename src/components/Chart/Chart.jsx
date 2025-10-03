@@ -33,8 +33,26 @@ const Chart = ({
       case 'line':
         return (
           <LineChart data={data}>
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis 
+              dataKey="name" 
+              stroke="transparent" 
+              tick={{ 
+                fill: 'var(--color-chart-axis-text)', 
+                fontSize: 12, 
+                fontWeight: 400 
+              }} 
+            />
+            <YAxis 
+              stroke="transparent" 
+              tick={{ 
+                fill: 'var(--color-chart-axis-text)', 
+                fontSize: 12, 
+                fontWeight: 400 
+              }} 
+              domain={[0, 10000]}
+              ticks={[0, 3000, 5000, 7000, 10000]}
+              tickFormatter={(value) => `${value/1000}K`}
+            />
             <Tooltip />
             {showLegend && <Legend />}
             {dataKeys.map((key, index) => (
@@ -53,8 +71,26 @@ const Chart = ({
       case 'bar':
         return (
           <BarChart data={data}>
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis 
+              dataKey="name" 
+              stroke="transparent" 
+              tick={{ 
+                fill: 'var(--color-chart-axis-text)', 
+                fontSize: 12, 
+                fontWeight: 400 
+              }} 
+            />
+            <YAxis 
+              stroke="transparent" 
+              tick={{ 
+                fill: 'var(--color-chart-axis-text)', 
+                fontSize: 12, 
+                fontWeight: 400 
+              }} 
+              domain={[0, 10000]}
+              ticks={[0, 3000, 5000, 7000, 10000]}
+              tickFormatter={(value) => `${value/1000}K`}
+            />
             <Tooltip />
             {showLegend && <Legend />}
             {dataKeys.map((key, index) => (
@@ -93,8 +129,26 @@ const Chart = ({
       default:
         return (
           <LineChart data={data}>
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis 
+              dataKey="name" 
+              stroke="transparent" 
+              tick={{ 
+                fill: 'var(--color-chart-axis-text)', 
+                fontSize: 12, 
+                fontWeight: 400 
+              }} 
+            />
+            <YAxis 
+              stroke="transparent" 
+              tick={{ 
+                fill: 'var(--color-chart-axis-text)', 
+                fontSize: 12, 
+                fontWeight: 400 
+              }} 
+              domain={[0, 10000]}
+              ticks={[0, 3000, 5000, 7000, 10000]}
+              tickFormatter={(value) => `${value/1000}K`}
+            />
             <Tooltip />
             {showLegend && <Legend />}
             <Line type="monotone" dataKey="value" stroke={colors[0]} strokeWidth={2} />
