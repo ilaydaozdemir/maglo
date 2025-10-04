@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: -webkit-fill-available;
   width: 250px;
   background: var(--color-sidebar-bg);
   transition: all 0.3s ease;
@@ -21,7 +21,8 @@
 }
 
 .sidebar.closed {
-  width: 70px;
+  width: 100px;
+  height: -webkit-fill-available;
 }
 
 .logoContainer {
