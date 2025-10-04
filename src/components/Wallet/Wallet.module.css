@@ -202,3 +202,82 @@
   font-size: 16px;
   color: var(--color-text-primary);
 }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cardsContainer {
+    width: 100%;
+    max-width: 354px;
+  }
+  
+  .firstCard,
+  .secondCard {
+    width: 100%;
+    max-width: 354px;
+  }
+  
+  .secondCard {
+    max-width: 324px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsContainer {
+    width: 100%;
+    height: auto;
+  }
+  
+  .firstCard {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .secondCard {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  .scheduledSection {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .firstCard,
+  .secondCard {
+    padding: 15px;
+  }
+  
+  .cardNumber,
+  .secondCardNumber {
+    font-size: 14px;
+  }
+  
+  .transferItem {
+    padding: 12px;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .transferName {
+    font-size: 12px;
+  }
+  
+  .transferDate {
+    font-size: 10px;
+  }
+  
+  .transferAmount {
+    font-size: 14px;
+  }
+}

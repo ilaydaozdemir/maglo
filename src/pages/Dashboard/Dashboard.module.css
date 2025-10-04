@@ -162,6 +162,70 @@
   margin-left: 40px;
 }
 
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboardLayout {
+    grid-template-columns: 1fr;
+    margin-left: 20px;
+    gap: 20px;
+  }
+  
+  .rightSection {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardLayout {
+    margin-left: 10px;
+    gap: 15px;
+  }
+  
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .chartSection {
+    padding: 15px;
+  }
+  
+  .chartHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .chartHeaderRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboardLayout {
+    margin-left: 5px;
+    gap: 10px;
+  }
+  
+  .cardsGrid {
+    gap: 10px;
+  }
+  
+  .chartSection {
+    padding: 10px;
+  }
+  
+  .chartTitle {
+    font-size: 16px;
+  }
+  
+  .chartLegend {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 .leftSection {
   display: flex;
   flex-direction: column;
@@ -271,6 +335,23 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   height: 105px;
+}
+
+/* Cards Grid Responsive */
+@media (max-width: 992px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    height: auto;
+  }
 }
 
 
