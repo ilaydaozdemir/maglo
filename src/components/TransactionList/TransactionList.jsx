@@ -36,7 +36,9 @@ const TransactionList = () => {
         <h3 className={styles.title}>Recent Transaction</h3>
         <div className={styles.viewAll}>
           <span className={styles.viewAllText}>View All</span>
-          <span className={styles.arrow}>→</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="var(--color-transaction-link)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
         </div>
       </div>
       

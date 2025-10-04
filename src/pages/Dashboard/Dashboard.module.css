@@ -191,7 +191,7 @@
 .chartHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 20px;
 }
 
@@ -209,6 +209,7 @@
   font-size: 18px;
   color: var(--color-text-primary);
   margin: 0;
+  line-height: 1;
 }
 
 .chartLegend {

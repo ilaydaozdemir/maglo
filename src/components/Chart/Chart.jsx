@@ -61,14 +61,6 @@ const Chart = ({
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 padding: '8px 12px'
               }}
-              formatter={(value, name) => {
-                console.log('Tooltip formatter:', { value, name });
-                if (name === 'expense') {
-                  return [`$${value.toLocaleString()}`, 'Expenses'];
-                }
-                return null;
-              }}
-              labelFormatter={() => ''}
             />
             {showLegend && <Legend />}
             {dataKeys.map((key, index) => (
@@ -115,13 +107,16 @@ const Chart = ({
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 padding: '8px 12px'
               }}
-              formatter={(value, name) => {
-                console.log('Tooltip formatter:', { value, name });
-                if (name === 'expense') {
-                  return [`$${value.toLocaleString()}`, 'Expenses'];
-                }
-                return null;
-              }}
+               formatter={(value, name) => {
+                 console.log('Tooltip formatter:', { value, name });
+                 if (name === 'expense') {
+                   return [`$${value.toLocaleString()}`, 'Expenses'];
+                 }
+                 if (name === 'income') {
+                   return [`$${value.toLocaleString()}`, 'Income'];
+                 }
+                 return null;
+               }}
               labelFormatter={() => ''}
             />
             {showLegend && <Legend />}
@@ -161,13 +156,16 @@ const Chart = ({
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 padding: '8px 12px'
               }}
-              formatter={(value, name) => {
-                console.log('Tooltip formatter:', { value, name });
-                if (name === 'expense') {
-                  return [`$${value.toLocaleString()}`, 'Expenses'];
-                }
-                return null;
-              }}
+               formatter={(value, name) => {
+                 console.log('Tooltip formatter:', { value, name });
+                 if (name === 'expense') {
+                   return [`$${value.toLocaleString()}`, 'Expenses'];
+                 }
+                 if (name === 'income') {
+                   return [`$${value.toLocaleString()}`, 'Income'];
+                 }
+                 return null;
+               }}
               labelFormatter={() => ''}
             />
             {showLegend && <Legend />}
@@ -205,13 +203,16 @@ const Chart = ({
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 padding: '8px 12px'
               }}
-              formatter={(value, name) => {
-                console.log('Tooltip formatter:', { value, name });
-                if (name === 'expense') {
-                  return [`$${value.toLocaleString()}`, 'Expenses'];
-                }
-                return null;
-              }}
+               formatter={(value, name) => {
+                 console.log('Tooltip formatter:', { value, name });
+                 if (name === 'expense') {
+                   return [`$${value.toLocaleString()}`, 'Expenses'];
+                 }
+                 if (name === 'income') {
+                   return [`$${value.toLocaleString()}`, 'Income'];
+                 }
+                 return null;
+               }}
               labelFormatter={() => ''}
             />
             {showLegend && <Legend />}

@@ -5,6 +5,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Card from "../../components/Card/Card";
 import Chart from "../../components/Chart/Chart";
 import TransactionList from "../../components/TransactionList/TransactionList";
+import Wallet from "../../components/Wallet/Wallet";
 import SearchIcon from "../../assets/search.png";
 import NotificationIcon from "../../assets/notification.png";
 import ArrowIcon from "../../assets/arrow.png";
@@ -200,7 +201,9 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className={styles.rightSection}></div>
+            <div className={styles.rightSection}>
+              <Wallet />
+            </div>
           </div>
         </div>
       </div>

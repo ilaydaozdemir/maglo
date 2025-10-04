@@ -3,7 +3,6 @@
 .chartContainer {
   background: var(--color-bg-primary);
   border-radius: 12px;
-  padding: 20px;
   margin-bottom: 20px;
 }
 
