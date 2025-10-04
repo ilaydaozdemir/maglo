@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# 💳 Maglo - Modern Finansal Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React ile geliştirilmiş, modern ve responsive finansal dashboard.
 
-## Available Scripts
+## 🚀 Özellikler
 
-In the project directory, you can run:
+### 🔐 Kimlik Doğrulama
 
-### `npm start`
+- **Güvenli Giriş**: Email ve şifre ile doğrulama
+- **Form Doğrulama**: Gerçek zamanlı form doğrulama ve hata mesajları
+- **Yükleme Durumları**: Kimlik doğrulama sırasında yumuşak yükleme animasyonları
+- **Token Yönetimi**: Güvenli token depolama ve yönetimi
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📊 Dashboard
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Responsive Tasarım**: Tüm ekran boyutları için tam responsive düzen
 
-### `npm test`
+### 💰 Cüzdan Yönetimi
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Para Birimi Desteği**: Uygun formatlama ile çoklu para birimi desteği
 
-### `npm run build`
+## 🛠️ Teknoloji Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend**: React 19.2.0
+- **Routing**: React Router DOM 6.30.1
+- **Grafikler**: Recharts 3.2.1
+- **Stil**: CSS Modules
+- **İkonlar**: Özel PNG varlıkları
+- **Build Aracı**: Create React App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Proje Yapısı
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── components/           # Yeniden kullanılabilir UI bileşenleri
+│   ├── Button/          # Özel buton bileşeni
+│   ├── Card/            # Cüzdan kartı bileşeni
+│   ├── Chart/           # Grafik görselleştirme bileşeni
+│   ├── Input/           # Form input bileşeni
+│   ├── Sidebar/         # Navigasyon sidebar'ı
+│   ├── Spinner/         # Yükleme spinner'ı
+│   ├── TransactionList/ # İşlem tablosu
+│   └── Wallet/          # Cüzdan yönetimi
+├── data/                # Statik veri ve mock API'ler
+│   └── dashboardData.js # Dashboard verisi
+├── hooks/               # Özel React hook'ları
+│   ├── useAuth.js       # Kimlik doğrulama hook'u
+│   └── useForm.js       # Form yönetimi hook'u
+├── pages/               # Sayfa bileşenleri
+│   ├── Dashboard/       # Ana dashboard sayfası
+│   └── SignIn/          # Giriş sayfası
+├── routes/              # Routing yapılandırması
+│   └── AppRouter.jsx    # Ana router
+├── styles/              # Global stiller
+│   └── colors.css       # Renk değişkenleri
+├── utils/               # Yardımcı fonksiyonlar
+│   ├── currency.js      # Para birimi formatlama
+│   ├── validation.js    # Form doğrulama
+│   └── index.js         # Yardımcı fonksiyon export'ları
+└── assets/              # Statik varlıklar
+    ├── Logo.png         # Uygulama logosu
+    ├── walletCard.png   # Cüzdan ikonları
+    └── ...              # Diğer varlıklar
+```
 
-### `npm run eject`
+## 🚀 Başlangıç
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Gereksinimler
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js (v14 veya üzeri)
+- npm veya yarn
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Kurulum
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Repository'yi klonlayın**
 
-## Learn More
+   ```bash
+   git clone <repository-url>
+   cd maglo
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Bağımlılıkları yükleyin**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm install
+   ```
 
-### Code Splitting
+3. **Geliştirme sunucusunu başlatın**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm start
+   ```
 
-### Analyzing the Bundle Size
+4. **Tarayıcınızı açın**
+   `http://localhost:3000` adresine gidin
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Mevcut Script'ler
 
-### Making a Progressive Web App
+- `npm start` - Uygulamayı geliştirme modunda çalıştırır
+- `npm run build` - Uygulamayı production için derler
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔧 Özel Hook'lar
 
-### Advanced Configuration
+### useAuth
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Kimlik doğrulama durumu ve kullanıcı verilerini yönetir:
 
-### Deployment
+```javascript
+const { isAuthenticated, user, login, logout } = useAuth();
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### useForm
 
-### `npm run build` fails to minify
+Form durumu ve doğrulamayı yönetir:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```javascript
+const { formData, errors, handleChange, validateForm } = useForm();
+```
+
+## 📊 Veri Yönetimi
+
+### Para Birimi Formatlama
+
+Uygulama kapsamlı para birimi formatlama yardımcıları içerir:
+
+```javascript
+import { formatCurrency } from "./utils/currency";
+
+// Para birimini locale ile formatla
+const formatted = formatCurrency(1234.56, "USD", "en-US");
+// Sonuç: "$1,234.56"
+```
+
+### Doğrulama
+
+Regex desenleri ve özel kurallarla form doğrulama:
+
+```javascript
+import { validateEmail, validatePassword } from "./utils/validation";
+
+// Email doğrulama
+const isValidEmail = validateEmail("user@example.com");
+
+// Şifre doğrulama
+const isValidPassword = validatePassword("password123");
+```

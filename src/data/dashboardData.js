@@ -68,3 +68,41 @@ export const quickActions = [
     icon: "bills"
   }
 ];
+
+export const scheduledTransfers = [
+  {
+    id: 1,
+    name: "iSaleh Ahmed",
+    date: "April 28, 2022 at 11:00",
+    amount: formatCurrency(435.00, 'USD', 'en-US'),
+    avatar: "Avater.png"
+  },
+  {
+    id: 2,
+    name: "Sarah Johnson",
+    date: "April 29, 2022 at 14:30",
+    amount: formatCurrency(250.50, 'USD', 'en-US'),
+    avatar: "Avater.png"
+  },
+  {
+    id: 3,
+    name: "Mike Wilson",
+    date: "April 30, 2022 at 09:15",
+    amount: formatCurrency(180.75, 'USD', 'en-US'),
+    avatar: "Avater.png"
+  },
+  {
+    id: 4,
+    name: "Emma Davis",
+    date: "May 1, 2022 at 16:45",
+    amount: formatCurrency(320.25, 'USD', 'en-US'),
+    avatar: "Avater.png"
+  },
+  {
+    id: 5,
+    name: "John Smith",
+    date: "May 2, 2022 at 12:00",
+    amount: formatCurrency(150.00, 'USD', 'en-US'),
+    avatar: "Avater.png"
+  }
+];
